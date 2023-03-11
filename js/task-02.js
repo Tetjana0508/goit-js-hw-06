@@ -16,16 +16,14 @@ const ingredients = [
 
 const listEl = document.querySelector('#ingredients');
 
-const ingredientsEl = ingredients.map(navEl => {
-const navItemEl = document.createElement('li');
-navItemEl.classList.add('item');
-  navItemEl.textContent = ingredients[0];
-  console.log(navItemEl);
-  return navItemEl;
-});
-listEl.append(...ingredientsEl);
+const ingredientsEl = (options) => {
+  return options.map((option) => {
+    const navItemEl = document.createElement('li');
+    navItemEl.classList.add('item');
+    navItemEl.textContent = option;
+    return navItemEl;
+  });
+};
 
-// console.log(ingredientsEl);
-
-// const navEl = document.querySelector('#ingredients');
-// navEl.append(navItemEl);
+const navItemlist = ingredientsEl(ingredients);
+listEl.append(...navItemlist);
