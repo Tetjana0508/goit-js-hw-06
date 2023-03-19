@@ -5,8 +5,16 @@
 
 
 const inputEl = document.querySelector('#validation-input');
+// console.dir(inputEl);
+const dataLengthEl = inputEl.getAttribute('data-length');
 // 1. Добавляет слушателя события addEventListener на элемент inputEl
+
 inputEl.addEventListener('blur', () => {
-    inputEl.classList.toggle('valid', inputEl.value.length >= 6 );
-    inputEl.classList.toggle('invalid', inputEl.value.length < 6 )
+    inputEl.classList.remove('valid', 'invalid');
+
+    if (inputEl.value.length !== Number(dataLengthEl)) {
+        inputEl.classList.toggle('invalid');
+    } else {
+inputEl.classList.toggle('valid');
+    }    
 })

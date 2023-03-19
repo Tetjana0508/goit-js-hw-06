@@ -21,7 +21,6 @@ function handleSubmit(event) {
   const formData = { /* отправка формы на сервер */
     mail, password,
   };
-  console.log(formData);
 
   // const formData = new FormData(event.currentTarget); /* создаем новый экземпляр formData, при вызове аргумента мы передаем ссылку на фомру(ДОМ узел) и собирает все значения */
   // console.log(formData);
@@ -31,7 +30,8 @@ function handleSubmit(event) {
   // });
 
   if (mail === '' || password === '') {
-    window.alert('Please fill in all the fields!'); /* если одно из полей не заполнено, выдает уведомление */
+    return window.alert('Please fill in all the fields!'); /* если одно из полей не заполнено, выдает уведомление */
   }
+  console.log(formData);
   event.target.reset() /* Выводит обьект с введенными данными в консоль и очищает значения полей формы методом reset */
 }
