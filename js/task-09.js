@@ -12,7 +12,7 @@ const backgroundColorEl = document.querySelector('body'); /* ссылка на b
 const chowColor = document.querySelector('.color'); /* ссылка на span */
 const buttonChangeColor = document.querySelector('.change-color'); /* ссылка на кнопку */
 
-buttonChangeColor.addEventListener('click', () => { /* вешаем прослушивание клика (addEventListener) на кнопку и при клике выполниется код */
+buttonChangeColor.addEventListener('click', () => { /* вешаем прослушивание клика (addEventListener) click на кнопку и при клике выполниется код */
   backgroundColorEl.style.backgroundColor = getRandomHexColor();
   chowColor.textContent = getRandomHexColor();
 })
